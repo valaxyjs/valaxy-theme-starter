@@ -1,0 +1,30 @@
+@use "sass:map";
+
+// common
+$common: () !default;
+$common: map.merge((), $common);
+
+// palette
+$light: (
+  "c-brand": #3e88f6,
+  "c-link": "var(--st-c-brand)",
+) !default;
+$light: map.merge((), $light);
+
+$dark: () !default;
+$dark: map.merge((), $dark);
+
+$z-index: () !default;
+$z-index: map.merge(
+  (
+    "cloud": 8,
+    "go-down": 9,
+    "sidebar": 10,
+    "fireworks": 11,
+    "menu-btn": 20,
+    "go-up-btn": 20,
+    "search-popup": 30,
+    "search-btn": 31,
+  ),
+  $z-index
+);

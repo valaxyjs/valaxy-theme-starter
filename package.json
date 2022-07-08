@@ -1,0 +1,38 @@
+{
+  "name": "valaxy-theme-starter",
+  "version": "0.7.3",
+  "author": {
+    "email": "me@yunyoujun.cn",
+    "name": "YunYouJun",
+    "url": "https://www.yunyoujun.cn"
+  },
+  "homepage": "https://valaxy.site",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YunYouJun/valaxy-theme-starter"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "build": "tsup",
+    "dev": "npm run watch",
+    "demo": "npm -C demo run dev",
+    "demo:build": "npm -C demo run build",
+    "watch": "tsup --watch"
+  },
+  "dependencies": {
+    "@iconify-json/ant-design": "^1.1.3",
+    "@iconify-json/simple-icons": "^1.1.19",
+    "dayjs": "2.0.0-alpha.2",
+    "nprogress": "^0.2.0",
+    "valaxy": "^0.7.5"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.25.2",
+    "eslint": "^8.19.0",
+    "tsup": "^6.1.3",
+    "typescript": "^4.7.4",
+    "valaxy-theme-starter": "workspace:*"
+  }
+}

@@ -1,0 +1,6 @@
+@use "~/styles/mixins" as *;
+@use "./post" as *;
+
+.link {
+  color: var(--st-c-brand);
+}
