@@ -2,6 +2,9 @@
 Valaxy-Theme-Starter<sup><em>(vue)</em></sup>
 </p>
 
+[![npm](https://img.shields.io/npm/v/valaxy-theme-starter)](https://www.npmjs.com/package/valaxy-theme-starter)
+[![npm dev dependency version](https://img.shields.io/npm/dependency-version/valaxy-theme-starter/dev/valaxy)](https://github.com/YunYouJun/valaxy)
+
 > This is a template for creating a [valaxy](https://github.com/YunYouJun/valaxy) theme.
 
 ## Usage

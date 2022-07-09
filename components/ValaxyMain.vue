@@ -18,9 +18,11 @@ const config = useConfig()
           <slot name="main-header-after" />
 
           <slot name="main-content">
-            <div class="markdown-body prose max-w-none pt-10 pb-8">
-              <slot name="main-content-md" />
-              <slot />
+            <div class="markdown-body prose max-w-none pb-8">
+              <ValaxyMd :frontmatter="frontmatter">
+                <slot name="main-content-md" />
+                <slot />
+              </ValaxyMd>
             </div>
             <slot name="main-content-after" />
           </slot>
