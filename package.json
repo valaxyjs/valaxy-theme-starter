@@ -6,10 +6,11 @@
     "prepublishOnly": "npm run build",
     "build": "npm -C theme run build",
     "build:demo": "npm -C demo run build",
+    "ci:publish": "pnpm -C theme publish --no-git-checks",
     "dev": "npm -C theme run dev",
     "demo": "npm -C demo run dev",
     "lint": "eslint .",
-    "release": "git add -A && bumpp",
+    "release": "cd theme && git add -A && bumpp",
     "typecheck": "vue-tsc --noEmit --skipLibCheck"
   },
   "devDependencies": {

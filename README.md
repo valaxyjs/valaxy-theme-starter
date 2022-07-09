@@ -42,7 +42,7 @@ pnpm build
 #### Manual
 
 ```bash
-pnpm publish
+pnpm ci:publish
 ```
 
 #### Auto by GitHub Actions
@@ -64,7 +64,8 @@ npm run release
 
 - [ ] Change the author name in `LICENSE` & `package.json` & `.github`
 - [ ] Write `ThemeConfig` & Other init content
-- [ ] Rename `valaxy-theme-starter` to `valaxy-theme-{name}` (custom it)
+- [ ] Rename `valaxy-theme-starter` to `valaxy-theme-<name>` (custom it)
+- [ ] Change `theme: 'starter'` to `theme: <name>` in `valaxy.config.ts`
 - [ ] Each of your Vue components should have a namespace
   - For example: `YunTest.vue` for `valaxy-theme-yun`
 
