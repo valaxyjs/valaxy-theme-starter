@@ -1,38 +1,16 @@
 {
-  "name": "valaxy-theme-starter",
-  "version": "0.1.4",
+  "private": true,
   "packageManager": "pnpm@7.5.0",
-  "author": {
-    "email": "me@yunyoujun.cn",
-    "name": "YunYouJun",
-    "url": "https://www.yunyoujun.cn"
-  },
   "homepage": "https://valaxy.site",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/YunYouJun/valaxy-theme-starter"
-  },
-  "keywords": [
-    "valaxy",
-    "theme",
-    "vue"
-  ],
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "scripts": {
     "prepublishOnly": "npm run build",
-    "build": "tsup",
+    "build": "npm -C theme run build",
     "build:demo": "npm -C demo run build",
-    "dev": "npm run watch",
+    "dev": "npm -C theme run dev",
     "demo": "npm -C demo run dev",
     "lint": "eslint .",
-    "watch": "tsup --watch",
     "release": "git add -A && bumpp",
     "typecheck": "vue-tsc --noEmit --skipLibCheck"
-  },
-  "dependencies": {
-    "@iconify-json/ant-design": "^1.1.3",
-    "@iconify-json/simple-icons": "^1.1.19"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.25.2",
@@ -40,7 +18,6 @@
     "eslint": "^8.19.0",
     "tsup": "^6.1.3",
     "typescript": "^4.7.4",
-    "valaxy": "^0.7.7",
     "valaxy-theme-starter": "workspace:*",
     "vue-tsc": "^0.38.3"
   }

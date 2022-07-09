@@ -45,7 +45,7 @@ pnpm build
 pnpm publish
 ```
 
-#### GitHub Actions
+#### Auto by GitHub Actions
 
 > You can release it by github actions.
 
