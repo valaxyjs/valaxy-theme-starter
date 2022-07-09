@@ -11,10 +11,10 @@ tags:
 ## Hello, Valaxy!
 
 ```ts
-import type { ThemeUserConfig } from 'valaxy-theme-starter'
+import type { ThemeConfig } from 'valaxy-theme-starter'
 import { defineConfig } from 'valaxy'
 
-export default defineConfig<ThemeUserConfig>({
+export default defineConfig<ThemeConfig>({
   // your theme name
   // valaxy-theme-yun name is 'yun'
   theme: 'starter',

@@ -1,6 +1,6 @@
 {
   "name": "valaxy-theme-starter",
-  "version": "0.7.3",
+  "version": "0.1.0",
   "author": {
     "email": "me@yunyoujun.cn",
     "name": "YunYouJun",
@@ -16,23 +16,24 @@
   "scripts": {
     "prepublishOnly": "npm run build",
     "build": "tsup",
+    "build:demo": "npm -C demo run build",
     "dev": "npm run watch",
     "demo": "npm -C demo run dev",
-    "demo:build": "npm -C demo run build",
-    "watch": "tsup --watch"
+    "lint": "eslint .",
+    "watch": "tsup --watch",
+    "typecheck": "vue-tsc --noEmit --skipLibCheck"
   },
   "dependencies": {
     "@iconify-json/ant-design": "^1.1.3",
     "@iconify-json/simple-icons": "^1.1.19",
-    "dayjs": "2.0.0-alpha.2",
-    "nprogress": "^0.2.0",
-    "valaxy": "^0.7.5"
+    "valaxy": "^0.7.7"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.25.2",
     "eslint": "^8.19.0",
     "tsup": "^6.1.3",
     "typescript": "^4.7.4",
-    "valaxy-theme-starter": "workspace:*"
+    "valaxy-theme-starter": "workspace:*",
+    "vue-tsc": "^0.38.3"
   }
 }

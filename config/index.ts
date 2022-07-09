@@ -38,5 +38,10 @@ export default defaultThemeConfig
  */
 export function generateSafelist(themeConfig: ThemeUserConfig = defaultThemeConfig) {
   const safelist: string[] = []
+
+  const footerIcon = themeConfig.footer?.icon?.name
+  if (footerIcon)
+    safelist.push(footerIcon)
+
   return safelist
 }
