@@ -1,6 +1,5 @@
 import type { Plugin } from 'vite'
-import type { ThemeConfig } from '../types'
-import { defaultThemeConfig } from '../config'
+import type { ResolvedValaxyOptions } from 'valaxy'
 
 export * from '../config'
 export * from '../types'
@@ -13,7 +12,7 @@ export interface UserOptions {
 
 // write a vite plugin
 // https://vitejs.dev/guide/api-plugin.html
-export function themePlugin(userOptions: Partial<ThemeConfig> = defaultThemeConfig): Plugin {
+export function themePlugin(options: ResolvedValaxyOptions): Plugin {
   return {
     name: 'valaxy-theme-starter',
 
@@ -26,6 +25,8 @@ export function themePlugin(userOptions: Partial<ThemeConfig> = defaultThemeConf
             },
           },
         },
+
+        valaxy: {},
       }
     },
   }
