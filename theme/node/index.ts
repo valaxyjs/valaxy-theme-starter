@@ -1,3 +1,4 @@
+import { defineThemePlugin } from 'valaxy'
 import type { Plugin } from 'vite'
 import type { ResolvedValaxyOptions } from 'valaxy'
 
@@ -13,6 +14,8 @@ export interface UserOptions {
 // write a vite plugin
 // https://vitejs.dev/guide/api-plugin.html
 export function themePlugin(options: ResolvedValaxyOptions): Plugin {
+  const themeConfig = options.config.themeConfig
+
   return {
     name: 'valaxy-theme-starter',
 
@@ -21,7 +24,7 @@ export function themePlugin(options: ResolvedValaxyOptions): Plugin {
         css: {
           preprocessorOptions: {
             scss: {
-              additionalData: `$c-primary: ${userOptions.colors?.primary || '#0078E7'} !default;`,
+              additionalData: `$c-primary: ${themeConfig.colors?.primary || '#0078E7'} !default;`,
             },
           },
         },
@@ -32,4 +35,11 @@ export function themePlugin(options: ResolvedValaxyOptions): Plugin {
   }
 }
 
-export default themePlugin
+export default defineThemePlugin((options) => {
+  return {
+    vite: {
+      plugins: [themePlugin(options)],
+    },
+  }
+})
+
