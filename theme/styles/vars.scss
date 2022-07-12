@@ -8,10 +8,14 @@ $common: map.merge((), $common);
 $light: (
   "c-brand": #3e88f6,
   "c-link": "var(--st-c-brand)",
+
+  "c-text": #101820,
 ) !default;
 $light: map.merge((), $light);
 
-$dark: () !default;
+$dark: (
+  "c-text": #f0f8ff,
+) !default;
 $dark: map.merge((), $dark);
 
 $z-index: () !default;

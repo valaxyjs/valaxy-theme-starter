@@ -17,15 +17,15 @@ const prevPost = computed(() => posts.value[findCurrentIndex() + 1])
 </script>
 
 <template>
-  <article class="xl:divide-y xl:divide-gray-200">
+  <article class="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
     <header class="pt-6 xl:pb-10 space-y-1 text-center">
       <StarterDate :date="frontmatter.date" />
       <h1
         class="
+          st-text
           text-3xl
           leading-9
           font-extrabold
-          text-gray-900
           tracking-tight
           sm:text-4xl sm:leading-10
           md:text-5xl md:leading-14
@@ -39,7 +39,7 @@ const prevPost = computed(() => posts.value[findCurrentIndex() + 1])
       class="
         divide-y
         xl:divide-y-0
-        divide-gray-200
+        divide-gray-200 dark:divide-gray-700
         xl:grid xl:grid-cols-4 xl:gap-x-10
         pb-16
         xl:pb-20
@@ -47,7 +47,7 @@ const prevPost = computed(() => posts.value[findCurrentIndex() + 1])
       style="grid-template-rows: auto 1fr"
     >
       <StarterAuthor v-if="frontmatter.author" :frontmatter="frontmatter" />
-      <div class="divide-y divide-gray-200 xl:pb-0 xl:col-span-3 xl:row-span-2">
+      <div class="divide-y divide-gray-200 dark:divide-gray-700 xl:pb-0 xl:col-span-3 xl:row-span-2">
         <router-view />
       </div>
 
@@ -56,7 +56,7 @@ const prevPost = computed(() => posts.value[findCurrentIndex() + 1])
           text-sm
           font-medium
           leading-5
-          divide-y divide-gray-200
+          divide-y divide-gray-200 dark:divide-gray-700
           xl:col-start-1 xl:row-start-2
         "
       >

@@ -13,7 +13,6 @@
     "valaxy-theme-starter": "workspace:*"
   },
   "devDependencies": {
-    "@waline/client": "^2.6.1",
     "nodemon": "^2.0.19"
   }
 }

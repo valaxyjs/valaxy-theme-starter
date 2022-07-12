@@ -12,7 +12,7 @@ defineProps<{
     <div class="space-y-5 xl:col-span-3">
       <div class="space-y-6">
         <h2 class="text-2xl leading-8 font-bold tracking-tight">
-          <a class="text-gray-900" :href="post.path">{{ post.title }}</a>
+          <a class="st-text" :href="post.path">{{ post.title }}</a>
         </h2>
         <div
           v-if="post.excerpt"
