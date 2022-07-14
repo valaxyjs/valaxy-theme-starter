@@ -41,6 +41,8 @@
       </slot>
     </main>
 
+    <StarterHelper />
+
     <StarterFooter>
       <slot name="footer" />
     </StarterFooter>

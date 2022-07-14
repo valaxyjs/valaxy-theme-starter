@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 import { isDark, toggleDark, useConfig } from 'valaxy'
-import { computed } from 'vue'
-import { useRoute } from 'vue-router'
+// import { computed } from 'vue'
+// import { useRoute } from 'vue-router'
 import { useThemeConfig } from '../composables'
 
-const route = useRoute()
-const isIndex = computed(() => route.path.replace(/index.html$/, '') === '/')
+// const route = useRoute()
+// const isIndex = computed(() => route.path.replace(/index.html$/, '') === '/')
 
 const config = useConfig()
 const themeConfig = useThemeConfig()
@@ -20,7 +20,7 @@ const themeConfig = useThemeConfig()
         alt="logo"
         :src="config.favicon"
       >
-      <span v-if="!isIndex" class="hidden md:inline">{{ config.title }}</span>
+      <span class="hidden md:inline">{{ config.title }}</span>
     </a>
     <div class="text-sm text-gray-500 leading-5">
       <template v-for="(item, i) in themeConfig.nav" :key="i">

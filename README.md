@@ -73,7 +73,10 @@ Let's write the theme & docs!
 
 ## Thanks
 
-Starter theme ref [vuejs/blog](https://github.com/vuejs/blog).
+Starter theme ref theme:
+
+- [vuejs/blog](https://github.com/vuejs/blog)
+- [tailwind-nextjs-starter-blog](https://github.com/timlrx/tailwind-nextjs-starter-blog)
 
 ### [Sponsors](https://sponsors.yunyoujun.cn)
 
