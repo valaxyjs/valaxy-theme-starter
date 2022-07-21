@@ -17,7 +17,7 @@
     "bumpp": "^8.2.1",
     "eslint": "^8.20.0",
     "typescript": "^4.7.4",
-    "valaxy": "latest",
+    "valaxy": "^0.10.3",
     "valaxy-theme-starter": "workspace:*",
     "vue-tsc": "^0.38.9"
   }
