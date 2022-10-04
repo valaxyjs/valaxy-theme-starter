@@ -9,11 +9,11 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "valaxy": "^0.10.3",
+    "valaxy": "^0.11.1",
     "valaxy-theme-starter": "workspace:*"
   },
   "devDependencies": {
-    "nodemon": "^2.0.19",
-    "vite-plugin-inspect": "^0.6.0"
+    "nodemon": "^2.0.20",
+    "vite-plugin-inspect": "^0.7.4"
   }
 }

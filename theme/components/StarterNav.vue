@@ -13,7 +13,7 @@ const themeConfig = useThemeConfig()
 
 <template>
   <nav w="full" class="flex justify-between items-center py-10 font-bold">
-    <a class="text-xl" href="/" :aria-label="config.title">
+    <router-link class="text-xl" to="/" :aria-label="config.title">
       <img
         class="inline-block mr-2"
         style="width: 50px; height: 35px"
@@ -21,15 +21,15 @@ const themeConfig = useThemeConfig()
         :src="config.favicon"
       >
       <span class="hidden md:inline">{{ config.title }}</span>
-    </a>
+    </router-link>
     <div class="text-sm text-gray-500 leading-5">
       <template v-for="(item, i) in themeConfig.nav" :key="i">
-        <a
-          :href="item.link"
-          target="_blank"
+        <AppLink
+          :to="item.link"
           rel="noopener"
-        >{{ item.text }}</a>
-
+        >
+          {{ item.text }}
+        </AppLink>
         <span v-if="i !== themeConfig.nav.length - 1" class="mr-2 ml-2">·</span>
       </template>
     </div>

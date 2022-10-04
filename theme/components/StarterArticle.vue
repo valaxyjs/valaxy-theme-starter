@@ -9,7 +9,7 @@ const route = useRoute()
 const posts = usePostList()
 
 function findCurrentIndex() {
-  return posts.value.findIndex(p => p.href === route.path)
+  return posts.value.findIndex(p => p.path === route.path)
 }
 
 const nextPost = computed(() => posts.value[findCurrentIndex() - 1])
@@ -60,24 +60,30 @@ const prevPost = computed(() => posts.value[findCurrentIndex() + 1])
           xl:col-start-1 xl:row-start-2
         "
       >
-        <div v-if="nextPost" class="py-8">
+        <div v-if="nextPost && nextPost.path" class="py-8">
           <h2 class="text-xs tracking-wide uppercase text-gray-500">
             Next Article
           </h2>
           <div class="link">
-            <a :href="nextPost.href">{{ nextPost.title }}</a>
+            <router-link :to="nextPost.path">
+              {{ nextPost.title }}
+            </router-link>
           </div>
         </div>
-        <div v-if="prevPost" class="py-8">
+        <div v-if="prevPost && prevPost.path" class="py-8">
           <h2 class="text-xs tracking-wide uppercase text-gray-500">
             Previous Article
           </h2>
           <div class="link">
-            <a :href="prevPost.href">{{ prevPost.title }}</a>
+            <router-link :to="prevPost.path">
+              {{ prevPost.title }}
+            </router-link>
           </div>
         </div>
         <div class="pt-8">
-          <a class="link" href="/">← Back to the blog</a>
+          <router-link class="link" to="/">
+            ← Back to the blog
+          </router-link>
         </div>
       </footer>
     </div>
