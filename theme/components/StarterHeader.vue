@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { useConfig } from 'valaxy'
+import { useConfig, useSiteConfig } from 'valaxy'
 
-const config = useConfig()
+const siteConfig = useSiteConfig()
 </script>
 
 <template>
@@ -17,10 +17,10 @@ const config = useConfig()
           md:text-6xl md:leading-14
         "
     >
-      {{ config.title }}
+      {{ siteConfig.title }}
     </h1>
     <p class="text-lg leading-7 text-gray-500">
-      {{ config.subtitle }}
+      {{ siteConfig.subtitle }}
     </p>
   </div>
 </template>

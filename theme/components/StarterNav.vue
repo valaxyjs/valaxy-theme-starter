@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { isDark, toggleDark, useConfig } from 'valaxy'
+import { isDark, toggleDark, useSiteConfig } from 'valaxy'
 // import { computed } from 'vue'
 // import { useRoute } from 'vue-router'
 import { useThemeConfig } from '../composables'
@@ -7,20 +7,20 @@ import { useThemeConfig } from '../composables'
 // const route = useRoute()
 // const isIndex = computed(() => route.path.replace(/index.html$/, '') === '/')
 
-const config = useConfig()
+const siteConfig = useSiteConfig()
 const themeConfig = useThemeConfig()
 </script>
 
 <template>
   <nav w="full" class="flex justify-between items-center py-10 font-bold">
-    <router-link class="text-xl" to="/" :aria-label="config.title">
+    <router-link class="text-xl" to="/" :aria-label="siteConfig.title">
       <img
         class="inline-block mr-2"
         style="width: 50px; height: 35px"
         alt="logo"
-        :src="config.favicon"
+        :src="siteConfig.favicon"
       >
-      <span class="hidden md:inline">{{ config.title }}</span>
+      <span class="hidden md:inline">{{ siteConfig.title }}</span>
     </router-link>
     <div class="text-sm text-gray-500 leading-5">
       <template v-for="(item, i) in themeConfig.nav" :key="i">

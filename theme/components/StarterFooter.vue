@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { capitalize, computed } from 'vue'
-import { useConfig } from 'valaxy'
+import { useSiteConfig, useValaxyConfig } from 'valaxy'
 import { useI18n } from 'vue-i18n'
 
 import pkg from 'valaxy/package.json'
@@ -8,7 +8,8 @@ import { useThemeConfig } from '../composables'
 
 const { t } = useI18n()
 
-const config = useConfig()
+const config = useValaxyConfig()
+const siteConfig = useSiteConfig()
 const themeConfig = useThemeConfig()
 
 const year = new Date().getFullYear()
@@ -42,7 +43,7 @@ const footerIcon = computed(() => themeConfig.value.footer.icon!)
         <div :class="footerIcon.name" />
       </a>
 
-      <span>{{ config.author.name }}</span>
+      <span>{{ siteConfig.author.name }}</span>
     </div>
 
     <div v-if="themeConfig.footer.powered" class="powered" m="2">
