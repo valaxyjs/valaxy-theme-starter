@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useConfig, useSiteConfig } from 'valaxy'
+import { useSiteConfig } from 'valaxy'
 
 const siteConfig = useSiteConfig()
 </script>
