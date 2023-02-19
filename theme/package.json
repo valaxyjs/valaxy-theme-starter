@@ -25,6 +25,6 @@
     "@iconify-json/simple-icons": "^1.1.44"
   },
   "devDependencies": {
-    "valaxy": "^0.14.10"
+    "valaxy": "^0.14.13"
   }
 }
