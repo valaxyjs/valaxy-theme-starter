@@ -15,12 +15,17 @@ Valaxy-Theme-Starter<sup><em>(vue)</em></sup>
 
 ```bash
 npx degit YunYouJun/valaxy-theme-starter valaxy-theme-name
+
 cd valaxy-theme-name
-# If you don't have pnpm installed, run: npm install -g pnpm
+
+# If you don't have pnpm installed
+npm install -g pnpm
+
 pnpm i
 ```
 
 ### Development
+
 
 ```bash
 # dev node
@@ -64,10 +69,27 @@ npm run release
 
 - [ ] Change the author name in `LICENSE` & `package.json` & `.github`
 - [ ] Write `ThemeConfig` & Other init content
-- [ ] Rename `valaxy-theme-starter` to `valaxy-theme-<name>` (custom it)
+- [ ] Rename `valaxy-theme-starter` to `valaxy-theme-<name>` (custom it) 
 - [ ] Change `theme: 'starter'` to `theme: <name>` in `valaxy.config.ts`
 - [ ] Each of your Vue components should have a namespace
   - For example: `YunTest.vue` for `valaxy-theme-yun`
+
+
+### About Checklist Rename
+
+Rename `valaxy-theme-starter` with `valaxy-theme-name` in the  `package.json` and `valaxy.config.ts` files.
+
+PS: there are a total of four files that need to be rename
+
+```bash
+valaxy-theme-name 
+  - package.json
+  - demo
+    - package.json
+    - valaxy.config.ts
+  - theme
+    - package.json
+```
 
 Let's write the theme & docs!
 
