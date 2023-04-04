@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 
 import { useFrontmatter, usePostList } from 'valaxy'
+
 const frontmatter = useFrontmatter()
 
 const route = useRoute()

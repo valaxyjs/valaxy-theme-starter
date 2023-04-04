@@ -5,7 +5,7 @@ import { computed } from 'vue'
 const { y } = useWindowScroll()
 const showBackToTop = computed(() => y.value > 50)
 
-const backToTop = () => {
+function backToTop() {
   if (!isClient)
     return
   window.scrollTo({ top: 0 })
