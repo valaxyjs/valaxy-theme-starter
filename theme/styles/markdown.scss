@@ -1,4 +1,4 @@
-@use "valaxy/client/styles/mixins" as *;
+@use "valaxy/client/styles/mixins/index.scss" as *;
 
 .markdown-body {
   --c-toc-link: var(--va-c-text-light);
@@ -24,7 +24,7 @@ html.dark {
   }
 
   ul {
-    li > p {
+    li>p {
       margin-bottom: 0;
     }
   }
