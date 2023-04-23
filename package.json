@@ -13,12 +13,12 @@
     "typecheck": "vue-tsc --noEmit --skipLibCheck"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.38.3",
+    "@antfu/eslint-config": "^0.38.5",
     "bumpp": "^9.1.0",
-    "eslint": "^8.37.0",
+    "eslint": "^8.39.0",
     "typescript": "^4.9.5",
-    "valaxy": "^0.14.25",
+    "valaxy": "^0.14.28",
     "valaxy-theme-starter": "workspace:*",
-    "vue-tsc": "^1.2.0"
+    "vue-tsc": "^1.4.4"
   }
 }
