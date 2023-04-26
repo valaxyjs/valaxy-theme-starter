@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { isDark, toggleDark, useSiteConfig } from 'valaxy'
+
 // import { computed } from 'vue'
 // import { useRoute } from 'vue-router'
 import { useThemeConfig } from '../composables'
