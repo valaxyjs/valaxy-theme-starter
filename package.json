@@ -15,7 +15,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^0.38.6",
     "bumpp": "^9.1.0",
-    "eslint": "^8.40.0",
+    "eslint": "^8.39.0",
     "typescript": "^4.9.5",
     "valaxy": "^0.14.28",
     "valaxy-theme-starter": "workspace:*",
