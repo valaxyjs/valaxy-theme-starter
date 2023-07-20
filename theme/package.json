@@ -21,10 +21,10 @@
   "main": "client/index.ts",
   "types": "types/index.d.ts",
   "dependencies": {
-    "@iconify-json/ant-design": "^1.1.5",
-    "@iconify-json/simple-icons": "^1.1.51"
+    "@iconify-json/ant-design": "^1.1.6",
+    "@iconify-json/simple-icons": "^1.1.61"
   },
   "devDependencies": {
-    "valaxy": "^0.14.28"
+    "valaxy": "^0.14.45"
   }
 }

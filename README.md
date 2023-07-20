@@ -26,7 +26,6 @@ pnpm i
 
 ### Development
 
-
 ```bash
 # dev node
 pnpm dev
