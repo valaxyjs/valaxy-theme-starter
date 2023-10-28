@@ -14,7 +14,7 @@ const themeConfig = useThemeConfig()
 
 <template>
   <nav w="full" class="flex justify-between items-center py-10 font-bold">
-    <router-link class="text-xl" to="/" :aria-label="siteConfig.title">
+    <RouterLink class="text-xl" to="/" :aria-label="siteConfig.title">
       <img
         class="inline-block mr-2"
         style="width: 50px; height: 35px"
@@ -22,7 +22,7 @@ const themeConfig = useThemeConfig()
         :src="siteConfig.favicon"
       >
       <span class="hidden md:inline">{{ siteConfig.title }}</span>
-    </router-link>
+    </RouterLink>
     <div class="text-sm text-gray-500 leading-5">
       <template v-for="(item, i) in themeConfig.nav" :key="i">
         <AppLink

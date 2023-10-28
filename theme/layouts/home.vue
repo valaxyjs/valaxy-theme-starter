@@ -4,7 +4,7 @@
       <StarterHeader />
 
       <slot>
-        <router-view />
+        <RouterView />
       </slot>
     </div>
   </Layout>

@@ -49,7 +49,7 @@ const prevPost = computed(() => posts.value[findCurrentIndex() + 1])
     >
       <StarterAuthor v-if="frontmatter.author" :frontmatter="frontmatter" />
       <div class="divide-y divide-gray-200 dark:divide-gray-700 xl:pb-0 xl:col-span-3 xl:row-span-2">
-        <router-view />
+        <RouterView />
       </div>
 
       <footer
@@ -66,9 +66,9 @@ const prevPost = computed(() => posts.value[findCurrentIndex() + 1])
             Next Article
           </h2>
           <div class="link">
-            <router-link :to="nextPost.path">
+            <RouterLink :to="nextPost.path">
               {{ nextPost.title }}
-            </router-link>
+            </RouterLink>
           </div>
         </div>
         <div v-if="prevPost && prevPost.path" class="py-8">
@@ -76,15 +76,15 @@ const prevPost = computed(() => posts.value[findCurrentIndex() + 1])
             Previous Article
           </h2>
           <div class="link">
-            <router-link :to="prevPost.path">
+            <RouterLink :to="prevPost.path">
               {{ prevPost.title }}
-            </router-link>
+            </RouterLink>
           </div>
         </div>
         <div class="pt-8">
-          <router-link class="link" to="/">
+          <RouterLink class="link" to="/">
             ← Back to the blog
-          </router-link>
+          </RouterLink>
         </div>
       </footer>
     </div>

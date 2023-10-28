@@ -6,7 +6,7 @@
 
     <main class="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
       <slot>
-        <router-view v-slot="{ Component }">
+        <RouterView v-slot="{ Component }">
           <component :is="Component">
             <template #main-header>
               <slot name="main-header" />
@@ -37,7 +37,7 @@
               <slot name="footer" />
             </template>
           </component>
-        </router-view>
+        </RouterView>
       </slot>
     </main>
 
