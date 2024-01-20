@@ -73,7 +73,6 @@ npm run release
 - [ ] Each of your Vue components should have a namespace
   - For example: `YunTest.vue` for `valaxy-theme-yun`
 
-
 ### About Checklist Rename
 
 Rename `valaxy-theme-starter` with `valaxy-theme-name` in the  `package.json` and `valaxy.config.ts` files.
@@ -81,7 +80,7 @@ Rename `valaxy-theme-starter` with `valaxy-theme-name` in the  `package.json` an
 PS: there are a total of four files that need to be rename
 
 ```bash
-valaxy-theme-name 
+valaxy-theme-name
   - package.json
   - demo
     - package.json
