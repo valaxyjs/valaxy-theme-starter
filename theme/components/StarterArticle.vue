@@ -49,7 +49,7 @@ const prevPost = computed(() => posts.value[findCurrentIndex() + 1])
     >
       <StarterAuthor v-if="frontmatter.author" :frontmatter="frontmatter" />
       <div class="divide-y divide-gray-200 dark:divide-gray-700 xl:pb-0 xl:col-span-3 xl:row-span-2">
-        <RouterView />
+        <slot />
       </div>
 
       <footer

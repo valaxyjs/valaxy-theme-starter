@@ -1,7 +1,7 @@
 {
   "name": "valaxy-theme-starter",
   "version": "0.2.1",
-  "packageManager": "pnpm@7.5.0",
+  "packageManager": "pnpm@8.14.1",
   "author": {
     "email": "me@yunyoujun.cn",
     "name": "YunYouJun",
@@ -21,10 +21,10 @@
   "main": "client/index.ts",
   "types": "types/index.d.ts",
   "dependencies": {
-    "@iconify-json/ant-design": "^1.1.10",
-    "@iconify-json/simple-icons": "^1.1.76"
+    "@iconify-json/ant-design": "^1.1.13",
+    "@iconify-json/simple-icons": "^1.1.88"
   },
   "devDependencies": {
-    "valaxy": "^0.15.10"
+    "valaxy": "^0.17.2"
   }
 }
