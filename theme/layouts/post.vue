@@ -1,5 +1,7 @@
 <template>
-  <StarterArticle>
-    <RouterView />
-  </StarterArticle>
+  <Layout>
+    <StarterArticle>
+      <RouterView />
+    </StarterArticle>
+  </Layout>
 </template>
