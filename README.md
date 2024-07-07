@@ -75,7 +75,7 @@ npm run release
 
 ### About Checklist Rename
 
-Rename `valaxy-theme-starter` with `valaxy-theme-name` in the  `package.json` and `valaxy.config.ts` files.
+Rename `valaxy-theme-starter` with `valaxy-theme-name` in the `package.json` and `valaxy.config.ts` files.
 
 PS: there are a total of four files that need to be rename
 

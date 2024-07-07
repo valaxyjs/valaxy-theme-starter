@@ -30,7 +30,7 @@ const footerIcon = computed(() => themeConfig.value.footer.icon!)
       </a>
     </div>
 
-    <div class="copyright flex justify-center items-center" p="1">
+    <div class="copyright flex items-center justify-center" p="1">
       <span>
         &copy;
         <template v-if="!isThisYear">

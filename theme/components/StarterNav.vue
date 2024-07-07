@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { isDark, toggleDarkWithTransition, useSiteConfig } from 'valaxy'
+import { useAppStore, useSiteConfig } from 'valaxy'
 
 // import { computed } from 'vue'
 // import { useRoute } from 'vue-router'
@@ -8,15 +8,17 @@ import { useThemeConfig } from '../composables'
 // const route = useRoute()
 // const isIndex = computed(() => route.path.replace(/index.html$/, '') === '/')
 
+const appStore = useAppStore()
+
 const siteConfig = useSiteConfig()
 const themeConfig = useThemeConfig()
 </script>
 
 <template>
-  <nav w="full" class="flex justify-between items-center py-10 font-bold">
+  <nav w="full" class="flex items-center justify-between py-10 font-bold">
     <RouterLink class="text-xl" to="/" :aria-label="siteConfig.title">
       <img
-        class="inline-block mr-2"
+        class="mr-2 inline-block"
         style="width: 50px; height: 35px"
         alt="logo"
         :src="siteConfig.favicon"
@@ -31,12 +33,12 @@ const themeConfig = useThemeConfig()
         >
           {{ item.text }}
         </AppLink>
-        <span v-if="i !== themeConfig.nav.length - 1" class="mr-2 ml-2">·</span>
+        <span v-if="i !== themeConfig.nav.length - 1" class="ml-2 mr-2">·</span>
       </template>
     </div>
 
-    <button type="button" aria-label="Toggle Dark Mode" @click="toggleDarkWithTransition">
-      <div v-if="!isDark" i-ri-sun-line />
+    <button type="button" aria-label="Toggle Dark Mode" @click="appStore.toggleDarkWithTransition">
+      <div v-if="!appStore.isDark" i-ri-sun-line />
       <div v-else i-ri-moon-line />
     </button>
   </nav>

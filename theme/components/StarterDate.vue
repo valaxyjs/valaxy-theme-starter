@@ -14,7 +14,7 @@ const datetime = computed(() => formatDate(props.date || ''))
     <dt class="sr-only">
       Published on
     </dt>
-    <dd class="text-base leading-6 font-medium text-gray-500">
+    <dd class="text-base text-gray-500 font-medium leading-6">
       <time :datetime="datetime">{{ datetime }}</time>
     </dd>
   </dl>

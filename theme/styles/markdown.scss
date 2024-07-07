@@ -1,7 +1,8 @@
-@use "valaxy/client/styles/mixins/index.scss" as *;
+@use 'valaxy/client/styles/mixins/index.scss' as *;
 
-@use "valaxy/client/styles/components/code-group.scss" as *;
-@use "valaxy/client/styles/components/custom-block.scss" as *;
+@use 'valaxy/client/styles/components/code.scss' as *;
+@use 'valaxy/client/styles/components/code-group.scss' as *;
+@use 'valaxy/client/styles/components/custom-block.scss' as *;
 
 .markdown-body {
   --c-toc-link: var(--va-c-text-light);
@@ -27,7 +28,7 @@ html.dark {
   }
 
   ul {
-    li>p {
+    li > p {
       margin-bottom: 0;
     }
   }
@@ -36,13 +37,11 @@ html.dark {
     margin: 16px 0;
     border-left: 4px solid var(--va-c-divider);
     padding-left: 12px;
-    transition: border-color .5s
-
-    p {
+    transition: border-color 0.5s p {
       margin: 0;
       font-size: 16px;
       color: var(--vp-c-text-2);
-      transition: color .5s;
+      transition: color 0.5s;
     }
   }
 

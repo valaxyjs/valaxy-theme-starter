@@ -18,7 +18,7 @@ const siteConfig = useSiteConfig()
           <slot name="main-header-after" />
 
           <slot name="main-content">
-            <div class="markdown-body prose max-w-none pb-8">
+            <div class="markdown-body max-w-none pb-8 prose">
               <ValaxyMd :frontmatter="frontmatter">
                 <slot name="main-content-md" />
                 <slot />

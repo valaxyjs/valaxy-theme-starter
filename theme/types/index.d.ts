@@ -1,3 +1,5 @@
+import type { DefaultTheme } from 'valaxy'
+
 export namespace StarterTheme {
   export type Config = ThemeConfig
   export type Sidebar = any
@@ -6,7 +8,7 @@ export namespace StarterTheme {
 /**
  * Theme Config
  */
-export interface ThemeConfig {
+export interface ThemeConfig extends DefaultTheme.Config {
   colors: {
     /**
      * primary color
