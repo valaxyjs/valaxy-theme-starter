@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { isDark, toggleDark, useSiteConfig } from 'valaxy'
+import { isDark, toggleDarkWithTransition, useSiteConfig } from 'valaxy'
 
 // import { computed } from 'vue'
 // import { useRoute } from 'vue-router'
@@ -35,7 +35,7 @@ const themeConfig = useThemeConfig()
       </template>
     </div>
 
-    <button type="button" aria-label="Toggle Dark Mode" @click="toggleDark()">
+    <button type="button" aria-label="Toggle Dark Mode" @click="toggleDarkWithTransition">
       <div v-if="!isDark" i-ri-sun-line />
       <div v-else i-ri-moon-line />
     </button>
