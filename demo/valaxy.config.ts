@@ -20,7 +20,7 @@ export default defineConfig<ThemeConfig>({
       },
       {
         text: 'RSS',
-        link: '/atom.xml',
+        link: 'https://starter.valaxy.site/atom.xml',
       },
       {
         text: 'Discord',
