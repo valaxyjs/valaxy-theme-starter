@@ -9,10 +9,10 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "valaxy": "^0.19.2",
+    "valaxy": "^0.22.9",
     "valaxy-theme-starter": "workspace:*"
   },
   "devDependencies": {
-    "nodemon": "^3.1.4"
+    "nodemon": "^3.1.9"
   }
 }
