@@ -2,7 +2,7 @@
   "name": "valaxy-theme-starter",
   "type": "module",
   "version": "0.3.2",
-  "packageManager": "pnpm@10.4.1",
+  "packageManager": "pnpm@10.17.1",
   "author": {
     "email": "me@yunyoujun.cn",
     "name": "YunYouJun",
@@ -23,9 +23,9 @@
   "types": "types/index.d.ts",
   "dependencies": {
     "@iconify-json/ant-design": "^1.2.5",
-    "@iconify-json/simple-icons": "^1.2.25"
+    "@iconify-json/simple-icons": "^1.2.52"
   },
   "devDependencies": {
-    "valaxy": "^0.22.10"
+    "valaxy": "^0.26.6"
   }
 }

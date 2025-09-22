@@ -30,4 +30,72 @@ declare module 'vue-router/auto-routes' {
     '/posts/test': RouteRecordInfo<'/posts/test', '/posts/test', Record<never, never>, Record<never, never>>,
     '/tags/': RouteRecordInfo<'/tags/', '/tags', Record<never, never>, Record<never, never>>,
   }
+
+  /**
+   * Route file to route info map by unplugin-vue-router.
+   * Used by the volar plugin to automatically type useRoute()
+   *
+   * Each key is a file path relative to the project root with 2 properties:
+   * - routes: union of route names of the possible routes when in this page (passed to useRoute<...>())
+   * - views: names of nested views (can be passed to <RouterView name="...">)
+   *
+   * @internal
+   */
+  export interface _RouteFileInfoMap {
+    '../theme/pages/index.vue': {
+      routes: '/'
+      views: never
+    }
+    '../node_modules/.pnpm/valaxy@0.26.6_@babel+parser@7.28.4_@types+markdown-it@14.1.2_@types+node@22.13.4_@vue+c_6155be4cfaccfd83de6d8aa04def78dd/node_modules/valaxy/client/pages/[...path].vue': {
+      routes: '/[...path]'
+      views: never
+    }
+    'pages/about.md': {
+      routes: '/about'
+      views: never
+    }
+    'pages/archives/index.md': {
+      routes: '/archives/'
+      views: never
+    }
+    'pages/categories/index.md': {
+      routes: '/categories/'
+      views: never
+    }
+    'pages/notes/index.md': {
+      routes: '/notes/'
+      views: never
+    }
+    'pages/posts/draft.md': {
+      routes: '/posts/draft'
+      views: never
+    }
+    'pages/posts/hello-valaxy.md': {
+      routes: '/posts/hello-valaxy'
+      views: never
+    }
+    'pages/posts/i18n.md': {
+      routes: '/posts/i18n'
+      views: never
+    }
+    'pages/posts/test.md': {
+      routes: '/posts/test'
+      views: never
+    }
+    'pages/tags/index.md': {
+      routes: '/tags/'
+      views: never
+    }
+  }
+
+  /**
+   * Get a union of possible route names in a certain route component file.
+   * Used by the volar plugin to automatically type useRoute()
+   *
+   * @internal
+   */
+  export type _RouteNamesForFilePath<FilePath extends string> =
+    _RouteFileInfoMap extends Record<FilePath, infer Info>
+      ? Info['routes']
+      : keyof RouteNamedMap
 }
