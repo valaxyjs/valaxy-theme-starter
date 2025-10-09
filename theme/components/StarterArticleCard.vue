@@ -18,7 +18,7 @@ defineProps<{
         </h2>
         <div
           v-if="post.excerpt"
-          class="max-w-none text-gray-500 prose"
+          class="max-w-none text-gray-500 prose dark:prose-invert"
           v-html="post.excerpt"
         />
       </div>

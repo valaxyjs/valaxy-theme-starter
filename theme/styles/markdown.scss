@@ -1,5 +1,8 @@
 @use 'valaxy/client/styles/mixins/index.scss' as *;
 
+// use common code styles, you also can override them or copy/modify them
+@use 'valaxy/client/styles/common/code.scss' as *;
+
 @use 'valaxy/client/styles/components/code.scss' as *;
 @use 'valaxy/client/styles/components/code-group.scss' as *;
 @use 'valaxy/client/styles/components/custom-block.scss' as *;
@@ -52,6 +55,7 @@ html.dark {
     padding: 3px 6px;
     border-radius: 4px;
     font-weight: 500;
+    font-size: 0.85em;
 
     &::before {
       content: none;
