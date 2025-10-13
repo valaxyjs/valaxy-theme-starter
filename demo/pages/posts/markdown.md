@@ -26,6 +26,8 @@ This is a details block.
 
 ## Colored Diffs in Code Blocks
 
+<!-- eslint-skip -->
+
 ```js
 export default {
   data () {
