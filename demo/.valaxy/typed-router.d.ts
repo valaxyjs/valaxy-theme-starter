@@ -27,6 +27,7 @@ declare module 'vue-router/auto-routes' {
     '/posts/draft': RouteRecordInfo<'/posts/draft', '/posts/draft', Record<never, never>, Record<never, never>>,
     '/posts/hello-valaxy': RouteRecordInfo<'/posts/hello-valaxy', '/posts/hello-valaxy', Record<never, never>, Record<never, never>>,
     '/posts/i18n': RouteRecordInfo<'/posts/i18n', '/posts/i18n', Record<never, never>, Record<never, never>>,
+    '/posts/markdown': RouteRecordInfo<'/posts/markdown', '/posts/markdown', Record<never, never>, Record<never, never>>,
     '/posts/test': RouteRecordInfo<'/posts/test', '/posts/test', Record<never, never>, Record<never, never>>,
     '/tags/': RouteRecordInfo<'/tags/', '/tags', Record<never, never>, Record<never, never>>,
   }
@@ -76,6 +77,10 @@ declare module 'vue-router/auto-routes' {
     }
     'pages/posts/i18n.md': {
       routes: '/posts/i18n'
+      views: never
+    }
+    'pages/posts/markdown.md': {
+      routes: '/posts/markdown'
       views: never
     }
     'pages/posts/test.md': {
