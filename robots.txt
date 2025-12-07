@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://starter.valaxy.site/sitemap.xml
