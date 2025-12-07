@@ -10,7 +10,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "valaxy": "^0.26.6",
+    "valaxy": "catalog:",
     "valaxy-theme-starter": "workspace:*"
   }
 }
