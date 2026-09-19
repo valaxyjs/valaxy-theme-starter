@@ -1,37 +1,32 @@
-name: GitHub Pages
-
+name: Deploy demo
 on:
   push:
-    branches:
-      - main
-
-  pull_request:
-    branches:
-      - main
-
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
         with:
-          node-version: lts/*
+          node-version: 22
           cache: pnpm
-
-      - name: Install
-        run: pnpm install
-
-      - name: Build Theme
-        run: pnpm run build
-
-      - name: Build Demo
-        run: pnpm run build:demo
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - uses: actions/upload-pages-artifact@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./demo/dist
-          force_orphan: true
+          path: demo/dist
+      - id: deployment
+        uses: actions/deploy-pages@v4

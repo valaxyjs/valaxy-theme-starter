@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { normalizeRepositoryUrl } from '@valaxyjs/utils'
 import { useSiteConfig, useValaxyConfig } from 'valaxy'
 import pkg from 'valaxy/package.json'
 import { capitalize, computed } from 'vue'
@@ -18,7 +19,7 @@ const isThisYear = computed(() => {
   return year === themeConfig.value.footer.since
 })
 
-const poweredHtml = computed(() => t('footer.powered', [`<a href="${pkg.repository}" target="_blank" rel="noopener">Valaxy</a> v${pkg.version}`]))
+const poweredHtml = computed(() => t('footer.powered', [`<a href="${normalizeRepositoryUrl(pkg.repository.url)}" target="_blank" rel="noopener">Valaxy</a> v${pkg.version}`]))
 const footerIcon = computed(() => themeConfig.value.footer.icon!)
 </script>
 

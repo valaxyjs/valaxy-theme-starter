@@ -2,21 +2,25 @@
   "compilerOptions": {
     "target": "ESNext",
     "jsx": "preserve",
-    "lib": ["DOM", "ESNext"],
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
     "baseUrl": ".",
     "module": "ESNext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "types": [
+      "node",
       "valaxy/client",
-      "vitest",
-      "vite/client",
-      "vite-plugin-vue-layouts/client"
+      "vite/client"
     ],
     "allowJs": true,
     "strict": true,
     "strictNullChecks": true,
     "noUnusedLocals": true,
+    "noEmit": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true
@@ -26,5 +30,9 @@
     "**/*.vue",
     "**/.valaxy/**/*.d.ts"
   ],
-  "exclude": ["**/dist/**", "node_modules"]
+  "exclude": [
+    "**/dist/**",
+    "**/node_modules/**",
+    "artifacts"
+  ]
 }

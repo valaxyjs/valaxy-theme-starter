@@ -1,107 +1,58 @@
-<p align="center">
-Valaxy-Theme-Starter<sup><em>(vue)</em></sup>
-</p>
+# Valaxy Theme Starter
 
-[![npm](https://img.shields.io/npm/v/valaxy-theme-starter)](https://www.npmjs.com/package/valaxy-theme-starter)
-[![npm dev dependency version](https://img.shields.io/npm/dependency-version/valaxy-theme-starter/dev/valaxy)](https://github.com/YunYouJun/valaxy)
+A runnable starting point for a [Valaxy](https://valaxy.site) theme, with a separate demo that consumes the theme as a workspace package. Supports Valaxy 1.0.0-rc.11, Vue 3 and Vite 8. Requires Node.js 22.12+ and pnpm 10.
 
-> This is a template for creating a [valaxy](https://github.com/YunYouJun/valaxy) theme.
-
-## Usage
-
-### Clone to local
-
-> Use [pnpm](https://pnpm.io/), because we need its workspace.
+## Create a theme
 
 ```bash
-npx degit YunYouJun/valaxy-theme-starter valaxy-theme-name
-
-cd valaxy-theme-name
-
-# If you don't have pnpm installed
-npm install -g pnpm
-
-pnpm i
-```
-
-### Development
-
-```bash
-# dev node
+pnpm dlx degit valaxyjs/valaxy-theme-starter valaxy-theme-aurora
+cd valaxy-theme-aurora
+# Rename package references, configuration and component namespaces together.
+pnpm theme:init aurora --owner your-github-name
+pnpm install
 pnpm dev
-# dev client
-pnpm demo
 ```
 
-### Build
+Use a lowercase kebab-case name without the `valaxy-theme-` prefix. `--owner` is optional. Initialization only runs on a fresh starter and refuses conflicting filenames. Review site metadata, package author and license attribution afterward. Retain existing copyright notices when reusing code.
+
+## Build with an AI coding assistant
+
+Install the theme authoring Skill in your assistant's workspace:
 
 ```bash
-pnpm build
+pnpm dlx skills add YunYouJun/valaxy --skill valaxy-theme
 ```
 
-### Release
+Describe your audience, visual direction and required blog features. Use the [editable theme prompt](https://valaxy.site/themes/write#generate-a-theme-with-ai) for a complete brief, including an AK UI preset. The Skill guides the assistant through framework APIs, accessible reading layouts, SSG and package verification. It runs in your coding assistant; this template does not call an AI service or require an API key.
 
-> Publish to [npm](https://www.npmjs.com/).
+Example request:
 
-#### Manual
+> Create an editorial Valaxy theme for a personal engineering blog. Use serif headings, a warm paper palette and an archive with title and tag filtering. Include light/dark modes, a long article with an outline and a mobile layout. Keep theme options typed. Run the checks and verify a packed theme in a clean consumer before finishing.
+
+## Workspace
+
+- `theme/`: the distributable package, with components, layouts, styles, typed configuration and setup.
+- `demo/`: a real blog using `valaxy-theme-starter` through `workspace:*` (renamed by `theme:init`).
+- `scripts/init-theme.mjs`: one-time package and component initialization.
+- `AGENTS.md`: concise authoring guidance for coding assistants.
+
+Valaxy discovers `styles/index.ts`, `setup/main.ts`, `components/` and `layouts/` automatically. `components/ValaxyMain.vue` receives the Markdown content slot. Render it through `ValaxyMd` so built-in Markdown enhancements continue to work. Keep `layouts/` thin and namespace ordinary theme components.
+
+## Validate and package
 
 ```bash
-pnpm ci:publish
+pnpm check       # lint, initializer tests, SSG demo build, Vue type checking
+pnpm pack:theme  # writes a source-distributed .tgz under artifacts/
 ```
 
-#### Auto by GitHub Actions
+Also inspect the homepage and a long article in desktop/mobile browsers, keyboard navigation and both color schemes. Check a non-root Vite `base` for subdirectory hosting. Before release, install the `.tgz` in a fresh Valaxy blog and build it: a workspace build alone does not prove package portability.
 
-> You can release it by github actions.
+## Publish when ready
 
-Click `Settings` -> `Secrets` -> `Actions` in your GitHub repo.
+After reviewing package metadata and the packed archive, publish manually with `pnpm --dir theme publish --access public --no-git-checks` using your own npm credentials. The tag-triggered release workflow runs the checks and publishes the theme using your repository’s `NPM_TOKEN` secret. Configure it before creating a release tag. `pnpm release` runs the version helper; review its Git actions before accepting them.
 
-Add `New repository secret`:
+CI checks Linux and Windows builds on Node 22. The Pages workflow builds on pushes to `main` or manual dispatch and deploys `demo/dist` after you configure GitHub Pages to use GitHub Actions. Set the demo Vite base and site URL for your hosting path, and remove or replace `demo/public/CNAME` if you use a custom domain.
 
-- `NPM_TOKEN`: `your npm token` (Generate from your npm `Access Tokens` - `Automation`)
+## License
 
-```bash
-npm run release
-# choose your version to automatic release
-```
-
-## Checklist
-
-- [ ] Change the author name in `LICENSE` & `package.json` & `.github`
-- [ ] Write `ThemeConfig` & Other init content
-- [ ] Rename `valaxy-theme-starter` to `valaxy-theme-<name>` (custom it)
-- [ ] Change `theme: 'starter'` to `theme: <name>` in `valaxy.config.ts`
-- [ ] Each of your Vue components should have a namespace
-  - For example: `YunTest.vue` for `valaxy-theme-yun`
-
-### About Checklist Rename
-
-Rename `valaxy-theme-starter` with `valaxy-theme-name` in the `package.json` and `valaxy.config.ts` files.
-
-PS: there are a total of four files that need to be rename
-
-```bash
-valaxy-theme-name
-  - package.json
-  - demo
-    - package.json
-    - valaxy.config.ts
-  - theme
-    - package.json
-```
-
-Let's write the theme & docs!
-
-## Thanks
-
-Starter theme ref theme:
-
-- [vuejs/blog](https://github.com/vuejs/blog)
-- [tailwind-nextjs-starter-blog](https://github.com/timlrx/tailwind-nextjs-starter-blog)
-
-### [Sponsors](https://sponsors.yunyoujun.cn)
-
-<p align="center">
-  <a href="https://sponsors.yunyoujun.cn">
-    <img src='https://fastly.jsdelivr.net/gh/YunYouJun/sponsors/public/sponsors.svg'/>
-  </a>
-</p>
+MIT. The starter's original layout draws inspiration from [vuejs/blog](https://github.com/vuejs/blog) and [tailwind-nextjs-starter-blog](https://github.com/timlrx/tailwind-nextjs-starter-blog).
