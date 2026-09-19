@@ -1,37 +1,27 @@
 name: Release
-
 on:
   push:
-    tags:
-      - 'v*'
-
+    tags: ['v*']
+permissions:
+  contents: write
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
         with:
-          run_install: true
-
-      # after pnpm
-      - name: Use Node.js LTS
-        uses: actions/setup-node@v3
-        with:
-          node-version: 'lts/*'
+          node-version: 22
           registry-url: https://registry.npmjs.org/
           cache: pnpm
-
-      - run: pnpm run build
-      # https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
-      - run: pnpm ci:publish
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm check
+      - run: pnpm --dir theme publish --access public --no-git-checks
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-
-      - run: npx changelogithub
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - run: pnpm dlx changelogithub@15
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

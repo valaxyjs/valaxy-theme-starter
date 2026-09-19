@@ -1,27 +1,40 @@
 {
+  "name": "valaxy-theme-starter-workspace",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@10.24.0",
+  "packageManager": "pnpm@10.34.4",
   "homepage": "https://valaxy.site",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
-    "build": "npm run build:demo",
-    "build:demo": "npm -C demo run build",
-    "ci:publish": "pnpm -r publish --access public --no-git-checks",
-    "dev": "npm run demo",
-    "demo": "npm -C demo run dev",
+    "build": "pnpm build:demo",
+    "build:demo": "pnpm --dir demo build",
+    "dev": "pnpm demo",
+    "demo": "pnpm --dir demo dev",
     "lint": "eslint .",
-    "release": "cd theme && git add -A && bumpp --all",
-    "typecheck": "vue-tsc --noEmit --skipLibCheck"
+    "release": "pnpm --dir theme exec bumpp",
+    "typecheck": "vue-tsc --noEmit --skipLibCheck",
+    "theme:init": "node scripts/init-theme.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "pnpm lint && pnpm test && pnpm build && pnpm typecheck",
+    "pack:theme": "pnpm --dir theme pack --pack-destination ../artifacts"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:",
+    "@types/node": "catalog:",
     "@unocss/eslint-plugin": "catalog:",
+    "@vueuse/core": "catalog:",
     "bumpp": "catalog:",
     "eslint": "catalog:",
     "eslint-plugin-format": "catalog:",
     "typescript": "catalog:",
+    "valaxy": "catalog:",
     "valaxy-theme-starter": "workspace:*",
-    "vitest": "catalog:",
+    "vite": "catalog:",
+    "vue": "catalog:",
+    "vue-i18n": "catalog:",
+    "vue-router": "catalog:",
     "vue-tsc": "catalog:"
   }
 }

@@ -1,12 +1,10 @@
 {
+  "name": "valaxy-theme-starter-demo",
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "npm run build:ssg",
-    "build:spa": "valaxy build",
-    "build:ssg": "valaxy build --ssg",
+    "build": "valaxy build --ssg --log info",
     "dev": "valaxy",
-    "rss": "valaxy rss",
     "serve": "vite preview"
   },
   "dependencies": {

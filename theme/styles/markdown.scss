@@ -42,7 +42,9 @@ html.dark {
     margin: 16px 0;
     border-left: 4px solid var(--va-c-divider);
     padding-left: 12px;
-    transition: border-color 0.5s p {
+    transition: border-color 0.2s;
+
+    p {
       margin: 0;
       font-size: 16px;
       color: var(--vp-c-text-2);
