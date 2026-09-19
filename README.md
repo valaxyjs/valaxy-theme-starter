@@ -23,7 +23,7 @@ Install the theme authoring Skill in your assistant's workspace:
 pnpm dlx skills add YunYouJun/valaxy --skill valaxy-theme
 ```
 
-Describe your audience, visual direction and required blog features. Use the [editable theme prompt](https://valaxy.site/themes/write#generate-a-theme-with-ai) for a complete brief, including an AK UI preset. The Skill guides the assistant through framework APIs, accessible reading layouts, SSG and package verification. It runs in your coding assistant; this template does not call an AI service or require an API key.
+Use the Skill for the reusable development workflow and the [brief generator](https://valaxy.site/themes/write#generate-a-theme-with-ai) for this theme’s audience, visual direction and required blog features. Choose **Design brief + Skill** when the Skill is installed, or **Standalone prompt** for an assistant without Skill support. You do not need to maintain two copies of the framework instructions. The Skill guides the assistant through framework APIs, accessible reading layouts, SSG and package verification. It runs in your coding assistant; this template does not call an AI service or require an API key.
 
 Example request:
 
@@ -41,7 +41,10 @@ Valaxy discovers `styles/index.ts`, `setup/main.ts`, `components/` and `layouts/
 ## Validate and package
 
 ```bash
-pnpm check       # lint, initializer tests, SSG demo build, Vue type checking
+pnpm lint        # ESLint, Vue and formatting checks
+pnpm build       # SSG demo build; also generates Valaxy declarations
+pnpm typecheck   # Vue/TypeScript checks (run build first in a fresh checkout)
+pnpm check       # all checks, including initializer tests
 pnpm pack:theme  # writes a source-distributed .tgz under artifacts/
 ```
 
@@ -51,7 +54,7 @@ Also inspect the homepage and a long article in desktop/mobile browsers, keyboar
 
 After reviewing package metadata and the packed archive, publish manually with `pnpm --dir theme publish --access public --no-git-checks` using your own npm credentials. The tag-triggered release workflow runs the checks and publishes the theme using your repository’s `NPM_TOKEN` secret. Configure it before creating a release tag. `pnpm release` runs the version helper; review its Git actions before accepting them.
 
-CI checks Linux and Windows builds on Node 22. The Pages workflow builds on pushes to `main` or manual dispatch and deploys `demo/dist` after you configure GitHub Pages to use GitHub Actions. Set the demo Vite base and site URL for your hosting path, and remove or replace `demo/public/CNAME` if you use a custom domain.
+CI exposes independent `lint` and `typecheck` jobs, plus Linux and Windows build/package checks on Node 22. `pnpm check` remains the local shortcut for all checks. The Pages workflow builds on pushes to `main` or manual dispatch and deploys `demo/dist` after you configure GitHub Pages to use GitHub Actions. Set the demo Vite base and site URL for your hosting path, and remove or replace `demo/public/CNAME` if you use a custom domain.
 
 ## License
 
