@@ -54,7 +54,7 @@ Also inspect the homepage and a long article in desktop/mobile browsers, keyboar
 
 After reviewing package metadata and the packed archive, publish manually with `pnpm --dir theme publish --access public --no-git-checks` using your own npm credentials. The tag-triggered release workflow runs the checks and publishes the theme using your repository’s `NPM_TOKEN` secret. Configure it before creating a release tag. `pnpm release` runs the version helper; review its Git actions before accepting them.
 
-CI exposes independent `lint` and `typecheck` jobs, plus Linux and Windows build/package checks on Node 22. `pnpm check` remains the local shortcut for all checks. The Pages workflow builds on pushes to `main` or manual dispatch and deploys `demo/dist` after you configure GitHub Pages to use GitHub Actions. Set the demo Vite base and site URL for your hosting path, and remove or replace `demo/public/CNAME` if you use a custom domain.
+CI exposes independent `lint` and `typecheck` jobs, plus Linux and Windows build/package checks on Node 22. `pnpm check` remains the local shortcut for all checks. The Pages workflow builds on pushes to `main` or manual dispatch and publishes `demo/dist` to `gh-pages`, preserving the starter’s branch-based hosting. In GitHub Pages settings, select **Deploy from a branch**, then **gh-pages / (root)**. Set the demo Vite base and site URL for your hosting path, and remove or replace `demo/public/CNAME` if you use a custom domain.
 
 ## License
 
