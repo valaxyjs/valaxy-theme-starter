@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://starter.valaxy.site/</id>
     <title>Valaxy Theme Starter</title>
-    <updated>2026-09-20T20:16:50.460Z</updated>
+    <updated>2026-09-20T20:24:28.745Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>云游君</name>
@@ -19,7 +19,7 @@
         <title type="html"><![CDATA[Markdown]]></title>
         <id>https://starter.valaxy.site/posts/markdown</id>
         <link href="https://starter.valaxy.site/posts/markdown"/>
-        <updated>2026-09-20T20:16:31.244Z</updated>
+        <updated>2026-09-20T20:24:10.229Z</updated>
         <content type="html"><![CDATA[<h2>Custom Containers</h2>
 <p>::: info<br>
 This is an info box.<br>
@@ -35,7 +35,7 @@ Th</p>
             <email>i@valaxy.site</email>
             <uri>https://valaxy.site/</uri>
         </author>
-        <published>2026-09-20T20:16:31.244Z</published>
+        <published>2026-09-20T20:24:10.229Z</published>
     </entry>
     <entry>
         <title type="html"><![CDATA[i18n]]></title>
