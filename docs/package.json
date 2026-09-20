@@ -1,0 +1,14 @@
+{
+  "name": "valaxy-theme-starter-docs",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "valaxy",
+    "build": "valaxy build --ssg",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "valaxy": "catalog:",
+    "valaxy-theme-press": "catalog:"
+  }
+}

@@ -9,6 +9,9 @@ async function fixture() {
   const root = await mkdtemp(join(tmpdir(), 'valaxy-theme-init-'))
   await mkdir(join(root, 'theme/components'), { recursive: true })
   await mkdir(join(root, 'demo'))
+  await mkdir(join(root, 'docs'))
+  await writeFile(join(root, 'docs/valaxy.config.ts'), `export default { theme: 'press', title: 'Starter', edit: 'https://github.com/valaxyjs/valaxy-theme-starter/edit/main/docs/:path', url: 'https://starter.valaxy.site/docs/' }`)
+  await writeFile(join(root, 'docs/package.json'), JSON.stringify({ name: 'valaxy-theme-starter-docs', private: true }))
   await writeFile(join(root, 'package.json'), JSON.stringify({ devDependencies: { 'valaxy-theme-starter': 'workspace:*' } }))
   await writeFile(join(root, 'theme/package.json'), JSON.stringify({ name: 'valaxy-theme-starter' }))
   await writeFile(join(root, 'theme/components/StarterNav.vue'), '<nav>Starter</nav>')
@@ -28,6 +31,12 @@ it('initializes package references, config and component namespaces together', a
     assert.equal(rootPkg.devDependencies['valaxy-theme-field-notes'], 'workspace:*')
     assert.match(await readFile(join(root, 'demo/valaxy.config.ts'), 'utf8'), /theme: 'field-notes'/)
     assert.equal(await readFile(join(root, 'theme/components/FieldNotesNav.vue'), 'utf8'), '<nav>FieldNotes</nav>')
+    const docs = await readFile(join(root, 'docs/valaxy.config.ts'), 'utf8')
+    assert.match(docs, /theme: 'press'/)
+    assert.match(docs, /FieldNotes/)
+    assert.match(docs, /valaxyjs\/valaxy-theme-field-notes/)
+    assert.match(docs, /https:\/\/example.com\/docs\//)
+    assert.equal(JSON.parse(await readFile(join(root, 'docs/package.json'), 'utf8')).name, 'valaxy-theme-field-notes-docs')
     await assert.rejects(initializeTheme(root, 'another-theme'), /unchanged starter/)
   }
   finally {

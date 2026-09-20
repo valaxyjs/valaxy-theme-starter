@@ -1,0 +1,52 @@
+diff --git a/client/components/ValaxyLocalSearch.vue b/client/components/ValaxyLocalSearch.vue
+index 415b84861302b72498d0688d8579bac0a519a9da..ded48d89ea1ad76a34d222a44e2b7b42903c354a 100644
+--- a/client/components/ValaxyLocalSearch.vue
++++ b/client/components/ValaxyLocalSearch.vue
+@@ -26,7 +26,7 @@ watch(() => props.open, (val) => {
+   else {
+     query.value = ''
+   }
+-})
++}, { immediate: true })
+ 
+ watch(results, () => {
+   selectedIndex.value = 0
+diff --git a/client/composables/search/useLocalSearch.ts b/client/composables/search/useLocalSearch.ts
+index 1d8c7b31b5d257153b78e5958d209d233b7d6663..bf24f777a9fb8c75808b13bf26dc880f4bbfcf5d 100644
+--- a/client/composables/search/useLocalSearch.ts
++++ b/client/composables/search/useLocalSearch.ts
+@@ -13,7 +13,7 @@ export interface LocalSearchResult {
+ export function useLocalSearch(query: Ref<string>) {
+   const results = shallowRef<LocalSearchResult[]>([])
+   const loading = ref(false)
+-  let miniSearch: MiniSearch | null = null
++  const miniSearch = shallowRef<MiniSearch | null>(null)
+ 
+   async function load(locale = 'root') {
+     loading.value = true
+@@ -25,9 +25,9 @@ export function useLocalSearch(query: Ref<string>) {
+         return
+       }
+       const mod = await loader()
+-      const data: string = JSON.parse(mod.default)
++      const data: string = mod.default
+       const { default: MiniSearchCtor } = await import('minisearch')
+-      miniSearch = MiniSearchCtor.loadJSON(data, {
++      miniSearch.value = MiniSearchCtor.loadJSON(data, {
+         fields: ['title', 'titles', 'text'],
+         storeFields: ['title', 'titles'],
+       })
+@@ -38,11 +38,11 @@ export function useLocalSearch(query: Ref<string>) {
+   }
+ 
+   watchEffect(() => {
+-    if (!miniSearch || !query.value.trim()) {
++    if (!miniSearch.value || !query.value.trim()) {
+       results.value = []
+       return
+     }
+-    results.value = miniSearch.search(query.value, {
++    results.value = miniSearch.value.search(query.value, {
+       prefix: true,
+       fuzzy: 0.2,
+       boost: { title: 4, text: 2, titles: 1 },

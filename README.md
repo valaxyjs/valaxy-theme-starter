@@ -1,6 +1,6 @@
 # Valaxy Theme Starter
 
-A runnable starting point for a [Valaxy](https://valaxy.site) theme, with a separate demo that consumes the theme as a workspace package. Supports Valaxy 1.0.0-rc.11, Vue 3 and Vite 8. Requires Node.js 22.12+ and pnpm 10.
+A runnable starting point for a [Valaxy](https://valaxy.site) theme, with a separate demo that consumes the theme as a workspace package. Supports Valaxy 1.0.0-rc.12, Vue 3 and Vite 8. Requires Node.js 22.12+ and pnpm 10.
 
 ## Create a theme
 
@@ -32,6 +32,7 @@ Example request:
 ## Workspace
 
 - `theme/`: the distributable package, with components, layouts, styles, typed configuration and setup.
+- `docs/`: a Press documentation site for the new theme, with local search and guide pages.
 - `demo/`: a real blog using `valaxy-theme-starter` through `workspace:*` (renamed by `theme:init`).
 - `scripts/init-theme.mjs`: one-time package and component initialization.
 - `AGENTS.md`: concise authoring guidance for coding assistants.
@@ -42,7 +43,9 @@ Valaxy discovers `styles/index.ts`, `setup/main.ts`, `components/` and `layouts/
 
 ```bash
 pnpm lint        # ESLint, Vue and formatting checks
-pnpm build       # SSG demo build; also generates Valaxy declarations
+pnpm build       # SSG demo and docs builds; also generates declarations
+pnpm docs:dev    # develop theme documentation
+pnpm build:site  # assemble demo at / and docs at /docs/ in dist/
 pnpm typecheck   # Vue/TypeScript checks (run build first in a fresh checkout)
 pnpm check       # all checks, including initializer tests
 pnpm pack:theme  # writes a source-distributed .tgz under artifacts/
@@ -54,8 +57,14 @@ Also inspect the homepage and a long article in desktop/mobile browsers, keyboar
 
 After reviewing package metadata and the packed archive, publish manually with `pnpm --dir theme publish --access public --no-git-checks` using your own npm credentials. The tag-triggered release workflow runs the checks and publishes the theme using your repository’s `NPM_TOKEN` secret. Configure it before creating a release tag. `pnpm release` runs the version helper; review its Git actions before accepting them.
 
-CI exposes independent `lint` and `typecheck` jobs, plus Linux and Windows build/package checks on Node 22. `pnpm check` remains the local shortcut for all checks. The Pages workflow builds on pushes to `main` or manual dispatch and publishes `demo/dist` to `gh-pages`, preserving the starter’s branch-based hosting. In GitHub Pages settings, select **Deploy from a branch**, then **gh-pages / (root)**. Set the demo Vite base and site URL for your hosting path, and remove or replace `demo/public/CNAME` if you use a custom domain.
+CI exposes independent `lint` and `typecheck` jobs, plus Linux and Windows build/package checks on Node 22. `pnpm check` remains the local shortcut for all checks. The Pages workflow builds on pushes to `main` or manual dispatch and publishes the combined `dist` (demo at `/`, docs at `/docs/`) to `gh-pages`, preserving the starter’s branch-based hosting. In GitHub Pages settings, select **Deploy from a branch**, then **gh-pages / (root)**. Set the demo Vite base and site URL for your hosting path, and remove or replace `demo/public/CNAME` if you use a custom domain.
 
 ## License
 
 MIT. The starter's original layout draws inspiration from [vuejs/blog](https://github.com/vuejs/blog) and [tailwind-nextjs-starter-blog](https://github.com/timlrx/tailwind-nextjs-starter-blog).
+
+## Theme documentation
+
+Keep installation, theme options, examples and upgrade notes in `docs/pages/`. Link to the Valaxy website for common framework instructions. Theme initialization updates the docs package, references and edit links while preserving `theme: 'press'`. Set the demo and docs site URLs after initialization; the placeholder domain is `example.com`. For subdirectory hosting, set the docs Vite base to the demo base followed by `docs/`. The documentation workspace is private and is not included in the theme package.
+
+Valaxy and Press `1.0.0-rc.12` currently need the compatibility patches in `patches/`: local-search initialization, index loading and reactivity; two Press type fixes; the `pageTitle` option; and hiding unavailable update dates. The same fixes are prepared upstream in Valaxy; remove `patchedDependencies` after upgrading to releases that include them. These patches affect this development workspace, not the published theme package.

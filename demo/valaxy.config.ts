@@ -14,6 +14,7 @@ export default defineValaxyConfig<ThemeConfig>({
     // },
 
     nav: [
+      { text: 'Documentation', link: 'https://starter.valaxy.site/docs/' },
       {
         text: 'GitHub',
         link: 'https://github.com/valaxyjs/valaxy-theme-starter',
