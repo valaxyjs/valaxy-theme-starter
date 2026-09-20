@@ -19,14 +19,14 @@ catalog:
   '@iconify-json/simple-icons': ^1.2.61
   '@types/node': ^24.0.0
   '@unocss/eslint-plugin': ^66.5.10
-  '@valaxyjs/utils': 1.0.0-rc.13
+  '@valaxyjs/utils': 1.0.0-rc.14
   '@vueuse/core': ^14.0.0
   bumpp: ^10.3.2
   eslint: ^9.39.1
   eslint-plugin-format: ^1.1.0
   typescript: ^5.9.3
-  valaxy: 1.0.0-rc.13
-  valaxy-theme-press: 1.0.0-rc.13
+  valaxy: 1.0.0-rc.14
+  valaxy-theme-press: 1.0.0-rc.14
   vite: ^8.0.0
   vue: ^3.5.41
   vue-i18n: ^11.0.0

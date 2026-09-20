@@ -1,6 +1,6 @@
 # Valaxy Theme Starter
 
-A runnable starting point for a [Valaxy](https://valaxy.site) theme, with a separate demo that consumes the theme as a workspace package. Supports Valaxy 1.0.0-rc.13, Vue 3 and Vite 8. Requires Node.js 22.12+ and pnpm 10.
+A runnable starting point for a [Valaxy](https://valaxy.site) theme, with a separate demo that consumes the theme as a workspace package. Supports Valaxy 1.0.0-rc.14, Vue 3 and Vite 8. Requires Node.js 22.12+ and pnpm 10.
 
 ## Create a theme
 
@@ -67,4 +67,4 @@ MIT. The starter's original layout draws inspiration from [vuejs/blog](https://g
 
 Keep installation, theme options, examples and upgrade notes in `docs/pages/`. Link to the Valaxy website for common framework instructions. Theme initialization updates the docs package, references and edit links while preserving `theme: 'press'`. Set the demo and docs site URLs after initialization; the placeholder domain is `example.com`. For subdirectory hosting, set the docs Vite base to the demo base followed by `docs/`. The documentation workspace is private and is not included in the theme package.
 
-Valaxy and Press `1.0.0-rc.13` include the documentation and local-search fixes used here. The workspace consumes their published packages directly and does not require compatibility patches.
+Valaxy and Press `1.0.0-rc.14` include the documentation and local-search fixes used here. The workspace consumes their published packages directly and does not require compatibility patches.
