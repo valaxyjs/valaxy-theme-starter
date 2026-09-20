@@ -2,12 +2,12 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://starter.valaxy.site/</id>
     <title>Valaxy Theme Starter</title>
-    <updated>2026-09-19T04:51:43.580Z</updated>
+    <updated>2026-09-20T19:39:20.238Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>云游君</name>
         <email>i@valaxy.site</email>
-        <uri>https://valaxy.site</uri>
+        <uri>https://valaxy.site/</uri>
     </author>
     <link rel="alternate" href="https://starter.valaxy.site/"/>
     <link rel="self" href="https://starter.valaxy.site/atom.xml"/>
@@ -19,7 +19,7 @@
         <title type="html"><![CDATA[Markdown]]></title>
         <id>https://starter.valaxy.site/posts/markdown</id>
         <link href="https://starter.valaxy.site/posts/markdown"/>
-        <updated>2026-09-19T04:51:20.766Z</updated>
+        <updated>2026-09-20T19:39:00.968Z</updated>
         <content type="html"><![CDATA[<h2>Custom Containers</h2>
 <p>::: info<br>
 This is an info box.<br>
@@ -33,9 +33,9 @@ Th</p>
         <author>
             <name>云游君</name>
             <email>i@valaxy.site</email>
-            <uri>https://valaxy.site</uri>
+            <uri>https://valaxy.site/</uri>
         </author>
-        <published>2026-09-19T04:51:20.766Z</published>
+        <published>2026-09-20T19:39:00.968Z</published>
     </entry>
     <entry>
         <title type="html"><![CDATA[i18n]]></title>
@@ -50,7 +50,7 @@ Th</p>
         <author>
             <name>云游君</name>
             <email>i@valaxy.site</email>
-            <uri>https://valaxy.site</uri>
+            <uri>https://valaxy.site/</uri>
         </author>
         <published>2022-04-09T00:00:00.000Z</published>
     </entry>
@@ -69,7 +69,7 @@ Th</p>
         <author>
             <name>云游君</name>
             <email>i@valaxy.site</email>
-            <uri>https://valaxy.site</uri>
+            <uri>https://valaxy.site/</uri>
         </author>
         <published>2022-03-23T00:00:00.000Z</published>
     </entry>
@@ -86,7 +86,7 @@ Th</p>
         <author>
             <name>云游君</name>
             <email>i@valaxy.site</email>
-            <uri>https://valaxy.site</uri>
+            <uri>https://valaxy.site/</uri>
         </author>
         <published>2022-03-22T00:00:00.000Z</published>
     </entry>

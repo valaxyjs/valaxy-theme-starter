@@ -1,0 +1,1 @@
+import{n as e}from"./framework.9sdobY40.js";var t={root:()=>e(()=>import(`./@localSearchIndexroot.C0DW0dWv.js`),[])};export{t as default};

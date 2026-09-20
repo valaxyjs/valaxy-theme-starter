@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.svg">
+    <script>
+    ;(function () {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+    </script>
+  <style type="text/css">
+    :root { color-scheme: light dark; --va-c-bg: #fff; }
+    html.dark { --va-c-bg: #000; }
+    html { background-color: var(--va-c-bg); }
+  </style><style id="valaxy-fouc">body{opacity:0!important}</style><style>body{transition:opacity .15s ease}</style><noscript><style>body{opacity:1!important}</style></noscript><script>(function foucGuardScript(maxDuration) {
+  var done = 0;
+  function reveal() {
+    if (done) return;
+    done = 1;
+    var s = document.getElementById("valaxy-fouc");
+    if (s) s.remove();
+  }
+  function check() {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (!links[i].sheet) return;
+    }
+    reveal();
+  }
+  new MutationObserver(check).observe(document.head, {
+    childList: true,
+    attributes: true,
+    attributeFilter: ["media", "rel"]
+  });
+  addEventListener("load", reveal);
+  if (maxDuration)
+    setTimeout(reveal, maxDuration);
+})(5000)</script>
+    <script>
+    const locale = localStorage.getItem('valaxy-locale') || 'en';
+    document.documentElement.setAttribute('lang', locale);
+    </script>
+    
+  <script type="module" crossorigin src="/docs/assets/index.BGfm3EZw.js"></script>
+  <link rel="modulepreload" crossorigin href="/docs/assets/rolldown-runtime.hePW80VL.js">
+  <link rel="modulepreload" crossorigin href="/docs/assets/framework.9sdobY40.js">
+  <link rel="modulepreload" crossorigin href="/docs/assets/chunks/vue-i18n.Da0Jz2Zl.js">
+  <link rel="modulepreload" crossorigin href="/docs/assets/chunks/vue-router.BY9pjFet.js">
+  <link rel="modulepreload" crossorigin href="/docs/assets/chunks/dayjs.Ds-6csIR.js">
+  <link rel="modulepreload" crossorigin href="/docs/assets/chunks/pinia.CrbAnFox.js">
+  <link rel="modulepreload" crossorigin href="/docs/assets/theme.ubxzlyq3.js">
+  <link rel="modulepreload" crossorigin href="/docs/assets/chunks/nprogress.Dew4DlVv.js">
+  <link rel="stylesheet" crossorigin href="/docs/assets/style.DLwC0fVI.css">
+<link rel="preload" href="/docs/assets/KaTeX_AMS-Regular.BQhdFMY1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_AMS-Regular.DMm9YOAa.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_Caligraphic-Bold.Dq_IR9rO.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_Caligraphic-Bold.BEiXGLvX.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_Caligraphic-Regular.Di6jR-x-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_Caligraphic-Regular.CTRA-rTL.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_Fraktur-Bold.CL6g_b3V.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_Fraktur-Bold.BsDP51OF.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_Fraktur-Regular.CTYiF6lA.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_Fraktur-Regular.Dxdc4cR9.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_Main-Bold.Cx986IdX.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_Main-Bold.Jm3AIy58.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_Main-BoldItalic.DxDJ3AOS.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_Main-BoldItalic.SpSLRI95.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_Main-Italic.NWA7e6Wa.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_Main-Italic.BMLOBm91.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_Main-Regular.B22Nviop.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_Main-Regular.Dr94JaBh.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_Math-BoldItalic.CZnvNsCZ.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_Math-BoldItalic.iY-2wyZ7.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_Math-Italic.t53AETM-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_Math-Italic.DA0__PXp.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_SansSerif-Bold.D1sUS0GD.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_SansSerif-Bold.DbIhKOiC.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_SansSerif-Italic.C3H0VqGB.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_SansSerif-Italic.DN2j7dab.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_SansSerif-Regular.DDBCnlJ7.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_SansSerif-Regular.CS6fqUqJ.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_Script-Regular.D3wIWfF6.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_Script-Regular.D5yQViql.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_Size1-Regular.mCD8mA8B.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_Size1-Regular.C195tn64.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_Size2-Regular.Dy4dx90m.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_Size2-Regular.oD1tc_U0.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_Size3-Regular.CTq5MqoE.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_Size4-Regular.Dl5lxZxV.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_Size4-Regular.BF-4gkZK.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_Typewriter-Regular.CO6r4hn1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/docs/assets/KaTeX_Typewriter-Regular.C0xS9mPB.woff" as="font" type="font/woff" crossorigin>
+<link rel="modulepreload" crossorigin href="/docs/assets/theme.ubxzlyq3.js">
+<link rel="modulepreload" crossorigin href="/docs/assets/getting-started.BIAD2uEU.js">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Getting started - Starter Documentation</title>
+<meta name="description" content="Install, configure and customize valaxy-theme-starter.">
+<meta property="og:description" content="Install, configure and customize valaxy-theme-starter.">
+<meta property="og:locale" content="en">
+<meta property="og:locale:alternate" content>
+<meta property="og:site_name" content="Starter Documentation">
+<meta property="og:title" content="Getting started">
+<meta property="og:image" content="https://starter.valaxy.site/docs/favicon.svg">
+<meta property="og:image:alt" content="Getting started">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://starter.valaxy.site/docs/guide/getting-started">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="Install, configure and customize valaxy-theme-starter.">
+<meta name="twitter:image" content="https://starter.valaxy.site/docs/favicon.svg">
+<meta name="twitter:title" content="Getting started">
+<link rel="icon" href="/docs/favicon.svg" type="image/svg+xml">
+<meta name="generator" content="Valaxy 1.0.0-rc.13">
+<link rel="canonical" href="https://starter.valaxy.site/docs/guide/getting-started">
+</head>
+<body>
+  <div id="app"><!--[--><!--[--><!----><!--[--><!--]--><!----><!--]--><div class="layout press-layout antialiased"><nav tabindex="-1" w="full" class="press-nav font-bold"><div class="pr-navbar flex justify-between items-center pl-4 pr-2 has-sidebar"><a href="/docs/" class="pr-navbar-brand text-xl flex justify-center items-center" aria-label="Starter Documentation"><!--v-if--><span class="pr-navbar-title inline-flex">Starter Documentation</span></a><div class="pr-navbar-actions self-stretch flex justify-center items-center text-sm leading-5"><div class="VPNavBarSearch" p="x-2"><!--[--><button class="press-search-btn" data-valaxy-search-trigger title="Search" data-v-0e1ed053><div class="press-search-btn-content" data-v-0e1ed053><svg class="press-search-btn-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" data-v-0e1ed053><path d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" fill="currentColor" data-v-0e1ed053></path></svg></div></button><!--teleport start--><!--teleport end--><!--]--></div><div class="pr-nav-bar-menu" h="full" p="x-2" data-orientation="horizontal" dir="ltr" data-reka-navigation-menu><!--[--><div style="position:relative;"><ul class="pr-nav-bar-menu-list" data-orientation="horizontal"><!--[--><!--[--><!--[--><li data-menu-item class="press-nav-item px-2" h="full" data-v-66a415d4><!--[--><a aria-current="page" href="/docs/guide/getting-started" class="router-link-active router-link-exact-active va-link press-nav-item-link flex justify-center items-center active" data-reka-collection-item data-active h="full" rel="noopener" data-v-66a415d4><!--[-->Guide<!--]--></a><!--]--></li><!--]--><!--[--><li data-menu-item class="press-nav-item px-2" h="full" data-v-66a415d4><!--[--><a class="va-link press-nav-item-link flex justify-center items-center" data-reka-collection-item h="full" rel="noopener" href="https://starter.valaxy.site/" target="_blank" data-v-66a415d4><!--[-->Demo<!--]--><div class="icon-link inline-block" i-ri-arrow-right-up-line></div></a><!--]--></li><!--]--><!--[--><li data-menu-item class="press-nav-item px-2" h="full" data-v-66a415d4><!--[--><a class="va-link press-nav-item-link flex justify-center items-center" data-reka-collection-item h="full" rel="noopener" href="https://valaxy.site" target="_blank" data-v-66a415d4><!--[-->Valaxy<!--]--><div class="icon-link inline-block" i-ri-arrow-right-up-line></div></a><!--]--></li><!--]--><!--]--><!--]--></ul></div><!--]--></div><div class="pr-nav-bar-translations" h="full" p="x-2" data-v-cb2f7030><!--[--><!-- Legacy toggle mode: no locales config --><button class="press-locale-trigger" aria-label="Change languages" title="Change languages"><div i-ri-translate class="rotate-y-180 transition transform"></div></button><!--]--></div><div class="pr-nav-bar-appearance" p="x-1" data-v-c840d844><button class="switch switch-appearance" type="button" aria-label="Toggle Dark Mode" data-v-c840d844 data-v-a58b7470><span class="check" data-v-a58b7470><span class="icon-wrap" data-v-a58b7470><div class="icon" i-ri-sun-line data-v-a58b7470></div></span></span></button></div><div class="pr-social-links pr-nav-bar-social-links" p="x-2" data-v-cd46a90e data-v-7b51f8a5><!--[--><!--]--></div><button type="button" class="pr-NavBarHamburger" aria-label="Open navigation" aria-haspopup="dialog" aria-expanded="false" aria-controls="pr-NavScreen" data-v-71e02261><span class="container" aria-hidden="true" data-v-71e02261><span class="top" data-v-71e02261></span><span class="middle" data-v-71e02261></span><span class="bottom" data-v-71e02261></span></span></button></div></div><div id="pr-NavScreen" class="pr-NavScreen" inert style="display:none;" data-v-7c8facfa><!----></div></nav><div class="press-local-nav has-sidebar" data-v-ec32fb00><button type="button" class="menu" aria-expanded="false" aria-controls="pr-sidebar-nav" data-v-ec32fb00><span i-ri-align-left class="menu-icon" aria-hidden="true" data-v-ec32fb00></span><span data-v-ec32fb00>Menu</span></button><!----></div><!--[--><aside tabindex="-1" class="press-sidebar" aria-label="Documentation navigation"><div class="sidebar-heading"><span>Documentation navigation</span><button type="button" class="sidebar-close" aria-label="Close navigation"><span i-ri-close-line aria-hidden="true"></span></button></div><nav id="pr-sidebar-nav" class="press-sidebar-nav" aria-label="Sidebar Navigation" text="left" m="2"><!--[--><ul class="press-sidebar-list category-list"><!--[--><!--[--><li class="VPSidebarItem press-sidebar-item-node level-0 is-link press-sidebar-root-item" data-v-1d3031d7><div class="press-sidebar-item item" data-v-1d3031d7><div class="indicator" data-v-1d3031d7></div><a href="/docs/" class="va-link link" tag="a" data-v-1d3031d7><!--[--><p class="text ml-1" data-v-1d3031d7><span data-v-1d3031d7>Introduction</span></p><!--]--></a><!----></div><!----></li><!--]--><!--[--><li class="VPSidebarItem press-sidebar-item-node level-0 is-link is-active has-active press-sidebar-root-item is-separated" data-v-1d3031d7><div class="press-sidebar-item item" data-v-1d3031d7><div class="indicator" data-v-1d3031d7></div><a aria-current="page" href="/docs/guide/getting-started" class="router-link-active router-link-exact-active va-link link" tag="a" data-v-1d3031d7><!--[--><p class="text ml-1" data-v-1d3031d7><span data-v-1d3031d7>Getting started</span></p><!--]--></a><!----></div><!----></li><!--]--><!--[--><li class="VPSidebarItem press-sidebar-item-node level-0 is-link press-sidebar-root-item is-separated" data-v-1d3031d7><div class="press-sidebar-item item" data-v-1d3031d7><div class="indicator" data-v-1d3031d7></div><a href="/docs/guide/configuration" class="va-link link" tag="a" data-v-1d3031d7><!--[--><p class="text ml-1" data-v-1d3031d7><span data-v-1d3031d7>Configuration</span></p><!--]--></a><!----></div><!----></li><!--]--><!--[--><li class="VPSidebarItem press-sidebar-item-node level-0 is-link press-sidebar-root-item is-separated" data-v-1d3031d7><div class="press-sidebar-item item" data-v-1d3031d7><div class="indicator" data-v-1d3031d7></div><a href="/docs/guide/customization" class="va-link link" tag="a" data-v-1d3031d7><!--[--><p class="text ml-1" data-v-1d3031d7><span data-v-1d3031d7>Customization</span></p><!--]--></a><!----></div><!----></li><!--]--><!--]--></ul><!--]--></nav></aside><!--]--><!----><!--[--><main class="press-main flex has-sidebar" data-v-de3bff14><div w="full" flex="~" class="px-6 md:pl-12 has-aside relative" p="t-4" data-v-de3bff14><div class="container" flex="~ grow" justify="between" data-v-de3bff14><!--[--><div w="full" class="vp-doc content" flex="~ col grow" p="lt-md:0" data-v-de3bff14><!--[--><!--]--><!--[--><!--]--><!--[--><!--[--><!--]--><article class="markdown-body mx-auto w-full max-w-4xl" data-v-de3bff14><!--[--><!----><!--[--><h1 id="getting-started" tabindex="-1">Getting started <a class="header-anchor" href="#getting-started" aria-label="Permalink to &quot;Getting started&quot;">​</a></h1><h2 id="preview-from-source" tabindex="-1">Preview from source <a class="header-anchor" href="#preview-from-source" aria-label="Permalink to &quot;Preview from source&quot;">​</a></h2><p>Clone this theme repository, install dependencies with pnpm, and run the demo:</p><div class="language-sh"><button title="Copy code" class="copy"></button><span class="lang">sh</span><pre class="shiki shiki-themes github-light github-dark vp-code"><code v-pre><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">pnpm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> install</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">pnpm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> dev</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>Use <code>pnpm docs:dev</code> to edit this documentation separately. Run <code>pnpm build</code> to verify both sites, or <code>pnpm build:site</code> to assemble the demo at <code>/</code> and the documentation at <code>/docs/</code> into <code>dist/</code>.</p><h2 id="install-in-a-blog" tabindex="-1">Install in a blog <a class="header-anchor" href="#install-in-a-blog" aria-label="Permalink to &quot;Install in a blog&quot;">​</a></h2><p>Once the theme is published, install it in an existing Valaxy project:</p><div class="language-sh"><button title="Copy code" class="copy"></button><span class="lang">sh</span><pre class="shiki shiki-themes github-light github-dark vp-code"><code v-pre><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">pnpm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> add</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> valaxy-theme-starter</span></span></code></pre><button class="code-block-unfold-btn"></button></div><div class="language-ts"><button title="Copy code" class="copy"></button><span class="lang">ts</span><pre class="shiki shiki-themes github-light github-dark vp-code"><code v-pre><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> { defineValaxyConfig } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">from</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &#39;valaxy&#39;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> default</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> defineValaxyConfig</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">({</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  theme: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&#39;starter&#39;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">})</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>Match the theme’s Valaxy peer dependency before upgrading. For a theme that has not been published, use <code>pnpm pack:theme</code> and install the resulting archive in a clean blog to check package portability.</p><p>Continue with <a href="./configuration">configuration</a>. For framework setup, see the <a href="https://valaxy.site/guide/getting-started" target="_blank" rel="noreferrer">Valaxy getting started guide</a>.</p><!--]--><!--[--><!--]--><!--]--><!----><!----></article><!--[--><!--]--><div class="press-doc-footer pb-8 max-w-4xl" w="full" m="auto" data-v-de3bff14 data-v-1447e58b><div flex justify="between" items="center" text="sm" data-v-1447e58b><a flex items="center" class="decoration-none!" href="https://github.com/valaxyjs/valaxy-theme-starter/edit/main/docs/pages/guide/getting-started.md" target="_blank" rel="noopener noreferrer" data-v-1447e58b><div i-ri-external-link-line data-v-1447e58b></div><span ml-1 data-v-1447e58b>Edit this page</span></a><!----></div><nav class="prev-next" aria-label="Pager" data-v-1447e58b><div class="pager" data-v-1447e58b><a href="/docs/" class="pager-link prev" data-v-1447e58b><span class="desc" data-v-1447e58b>Previous page</span><span class="title" data-v-1447e58b>Introduction</span></a></div><div class="pager" data-v-1447e58b><a href="/docs/guide/configuration" class="pager-link next" data-v-1447e58b><span class="desc" data-v-1447e58b>Next page</span><span class="title" data-v-1447e58b>Configuration</span></a></div></nav></div><!--]--></div><!--[--><!--]--><!--[--><!--]--><!--[--><!--]--><!----><!--[--><!--]--><!--]--><!--[--><aside id="press-page-outline" class="press-aside" aria-label="On this page" data-v-de3bff14 data-v-efcbb0aa><div class="aside-container" data-v-efcbb0aa><div data-v-efcbb0aa style="display:none;" data-v-ffbfc31c><div class="content" data-v-ffbfc31c><div class="outline-heading" data-v-ffbfc31c><div class="outline-title" data-v-ffbfc31c>On this page</div><!----></div><div class="outline-marker" data-v-ffbfc31c></div><nav aria-label="Table of contents for the current page" data-v-ffbfc31c><ul class="root va-toc css-i18n-toc va-toc relative z-1 css-i18n-toc" data-v-ffbfc31c data-v-443c1f06><!--[--><!--]--></ul></nav></div></div><!----></div></aside><!--]--></div></div></main><!--]--><footer class="press-footer has-sidebar" data-v-2fb3d0a7><div flex="~ col" class="container" data-v-2fb3d0a7><!----><!----></div></footer></div><!--]--></div><script>window.__INITIAL_STATE__='{"pinia":{"press-app":{"activePanel":null},"app":{"showLoading":true},"routerStore":{}}}'</script><script type="application/ld+json" data-hid="schema-org-graph">{"@context":"https://schema.org","@graph":[{"@id":"https://starter.valaxy.site/docs/#identity","@type":"Person","name":"VALAXY Developer","url":"https://starter.valaxy.site/docs/","image":{"@id":"https://starter.valaxy.site/docs/#/schema/image/1"},"sameAs":[]},{"@id":"https://starter.valaxy.site/docs/#website","@type":"WebSite","dateModified":"2026-09-20T19:39:00.968Z","datePublished":"2026-09-20T19:39:00.968Z","inLanguage":"en","name":"Getting started","url":"https://starter.valaxy.site/docs/","publisher":{"@id":"https://starter.valaxy.site/docs/#identity"}},{"@id":"https://starter.valaxy.site/docs/#webpage","@type":"WebPage","description":"Install, configure and customize valaxy-theme-starter.","name":"Getting started","url":"https://starter.valaxy.site/docs/","about":{"@id":"https://starter.valaxy.site/docs/#identity"},"isPartOf":{"@id":"https://starter.valaxy.site/docs/#website"},"potentialAction":[{"@type":"ReadAction","target":["https://starter.valaxy.site/docs/"]}]},{"@id":"https://starter.valaxy.site/docs/#/schema/image/1","@type":"ImageObject","contentUrl":"https://valaxy.site/valaxy-logo.png","inLanguage":"en","url":"https://valaxy.site/valaxy-logo.png"}]}</script>
+  <div id="valaxy-teleports"><!--teleport start anchor--><!----><!--teleport anchor--></div>
+  
+</body>
+</html>
