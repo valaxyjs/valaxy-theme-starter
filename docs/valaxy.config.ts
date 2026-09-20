@@ -10,7 +10,8 @@ export default defineValaxyConfig<PressTheme.Config>({
     description: 'Install, configure and customize valaxy-theme-starter.',
     url: 'https://starter.valaxy.site/docs/',
     lang: 'en',
-    languages: ['en'],
+    // Demo and docs share the saved UI language on this origin.
+    languages: ['en', 'zh-CN'],
     search: { enable: true, provider: 'local' },
   },
   themeConfig: {
