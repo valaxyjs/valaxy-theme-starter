@@ -16,7 +16,9 @@ export async function initializeTheme(root, input, owner) {
   const packageName = `valaxy-theme-${name}`
   const namespace = name.split('-').map(part => part[0].toUpperCase() + part.slice(1)).join('')
   const edits = []
-  for (const directory of ['theme', 'demo']) {
+  for (const directory of ['theme', 'demo', 'docs']) {
+    if (!await access(join(root, directory)).then(() => true, () => false))
+      continue
     async function visit(folder) {
       for (const entry of await readdir(folder, { withFileTypes: true })) {
         if (entry.isSymbolicLink() || ['node_modules', 'dist', '.valaxy'].includes(entry.name))
@@ -27,7 +29,7 @@ export async function initializeTheme(root, input, owner) {
         }
         else if (/\.(?:ts|vue|scss|css|json|md|yml)$/.test(entry.name)) {
           const source = await readFile(file, 'utf8')
-          const content = source.replaceAll('valaxy-theme-starter', packageName).replaceAll('Starter', namespace).replace(/theme: 'starter'/g, `theme: '${name}'`)
+          const content = source.replaceAll('valaxy-theme-starter', packageName).replaceAll('Starter', namespace).replace(/theme: 'starter'/g, `theme: '${name}'`).replaceAll(`valaxyjs/${packageName}`, `${owner || 'your-github-name'}/${packageName}`).replaceAll('https://starter.valaxy.site', 'https://example.com')
           edits.push({ file, content, destination: join(folder, basename(file).replace(/^Starter/, namespace)) })
         }
       }

@@ -1,12 +1,13 @@
 <script lang="ts" setup>
-import { formatDate } from 'valaxy'
+import { formatDate, useSiteConfig } from 'valaxy'
 import { computed } from 'vue'
 
 const props = defineProps<{
   date?: Date | number | string
 }>()
 
-const datetime = computed(() => formatDate(props.date || ''))
+const siteConfig = useSiteConfig()
+const datetime = computed(() => formatDate(props.date || '', { timezone: siteConfig.value.timezone || 'UTC' }))
 </script>
 
 <template>

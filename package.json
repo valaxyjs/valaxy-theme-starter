@@ -8,7 +8,7 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "build": "pnpm build:demo",
+    "build": "pnpm build:demo && pnpm docs:build",
     "build:demo": "pnpm --dir demo build",
     "dev": "pnpm demo",
     "demo": "pnpm --dir demo dev",
@@ -18,7 +18,11 @@
     "theme:init": "node scripts/init-theme.mjs",
     "test": "node --test tests/*.test.mjs",
     "check": "pnpm lint && pnpm test && pnpm build && pnpm typecheck",
-    "pack:theme": "pnpm --dir theme pack --pack-destination ../artifacts"
+    "pack:theme": "pnpm --dir theme pack --pack-destination ../artifacts",
+    "docs:dev": "pnpm --dir docs dev",
+    "docs:build": "pnpm --dir docs build",
+    "docs:serve": "pnpm --dir docs serve",
+    "build:site": "pnpm build && node scripts/assemble-site.mjs"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:",

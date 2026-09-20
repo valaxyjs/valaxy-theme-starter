@@ -30,7 +30,7 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - name: Generate Valaxy declarations with the demo build
+      - name: Generate declarations with demo and docs builds
         run: pnpm build
       - name: Typecheck
         run: pnpm typecheck
@@ -51,7 +51,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - name: Test theme initialization
         run: pnpm test
-      - name: Build SSG demo
-        run: pnpm build
+      - name: Build demo and docs deployment
+        run: pnpm build:site
       - name: Pack theme
         run: pnpm pack:theme

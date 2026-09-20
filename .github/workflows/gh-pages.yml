@@ -1,4 +1,4 @@
-name: Deploy demo
+name: Deploy demo and documentation
 on:
   push:
     branches: [main]
@@ -19,10 +19,10 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm build
+      - run: pnpm build:site
       - name: Publish demo to the existing Pages branch
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: demo/dist
+          publish_dir: dist
